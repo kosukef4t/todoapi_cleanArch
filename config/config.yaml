@@ -1,0 +1,6 @@
+database:
+  user: "dbuser"
+  password: "root"
+  host: "localhost"
+  port: 3306
+  dbname: "todos_db"
