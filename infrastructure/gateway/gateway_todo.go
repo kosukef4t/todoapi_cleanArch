@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"myproject/domain/entity"
-	"myproject/domain/repository"
+	repository "myproject/domain/interface"
 	"myproject/infrastructure/database/models"
 	"myproject/transform"
 

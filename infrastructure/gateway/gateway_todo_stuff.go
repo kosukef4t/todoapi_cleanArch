@@ -4,7 +4,7 @@ import (
 	"database/sql"
 
 	"myproject/domain/entity"
-	"myproject/domain/repository"
+	repository "myproject/domain/interface"
 	"myproject/transform"
 )
 

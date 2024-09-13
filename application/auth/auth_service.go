@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	auth_entity "myproject/domain/entity/auth"
-	repository "myproject/domain/repository/auth"
+	auth_repository "myproject/domain/interface/auth"
 	"time"
 
 	"github.com/lucsky/cuid"
@@ -13,11 +13,11 @@ import (
 
 // AuthService構造体：認証サービスを管理
 type AuthService struct {
-	UserRepo repository.IsUserRepository
+	UserRepo auth_repository.IsUserRepository
 }
 
 // NewAuthService関数：ユーザーリポジトリを受け取って認証サービスを作成
-func NewAuthService(userRepo repository.IsUserRepository) *AuthService {
+func NewAuthService(userRepo auth_repository.IsUserRepository) *AuthService {
 	return &AuthService{UserRepo: userRepo}
 }
 

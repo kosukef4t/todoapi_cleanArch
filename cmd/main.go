@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"myproject/di"
-	"myproject/infrastructure/database"
+	"myproject/infrastructure/mysql"
 	"myproject/infrastructure/router"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -34,7 +34,7 @@ func main() {
 	engine := echo.New()
 
 	// データベースの初期化
-	db, err := database.Initialize()
+	db, err := mysql.Initialize()
 	if err != nil {
 		log.Fatalf("Failed to initialize database: %v", err)
 	}

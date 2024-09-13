@@ -3,7 +3,7 @@ package services
 
 import (
 	"myproject/domain/entity"
-	"myproject/domain/repository"
+	repository "myproject/domain/interface"
 )
 
 type Service struct {
