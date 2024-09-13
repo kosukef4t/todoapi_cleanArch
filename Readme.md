@@ -59,7 +59,7 @@ migrationファイルを配置
 - /presentation/auth/middleware.go リクエストを行う前に認証を行うためのミドルウェアを配置
 - /presentation/handler ユーザからのリクエストを受け取りレスポンスを返す
 
-## /transform
+### /transform
 
 model(データベースとのやり取りを行うオブジェクト)とentityのデータ変換機能
 dto(クライアントとのやり取りを行うオブジェクト)とentityのデータ変換機能
