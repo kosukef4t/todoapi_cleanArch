@@ -3,7 +3,7 @@ package auth
 import (
 	"database/sql"
 	entity "myproject/domain/entity/auth"
-	repository "myproject/domain/repository/auth"
+	auth_repository "myproject/domain/interface/auth"
 	auth_models "myproject/infrastructure/auth/models"
 	auth_transform "myproject/transform/auth"
 )
@@ -13,7 +13,7 @@ type UserRepository struct {
 	db *sql.DB
 }
 
-func NewUserRepository(db *sql.DB) repository.IsUserRepository {
+func NewUserRepository(db *sql.DB) auth_repository.IsUserRepository {
 	return &UserRepository{db: db}
 }
 
