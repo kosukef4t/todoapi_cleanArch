@@ -22,5 +22,9 @@ type IsStaffRepository interface {
 }
 
 type IsToDoStaffRepository interface {
+	Get(todo_id, staff_id string) ([]*entity.ToDo_Staff, error)
+	GetByID(id string) (*entity.ToDo_Staff, error)
 	Assign(todo_staff *entity.ToDo_Staff) error
+	Update(id, todo_id, staff_id string) (*entity.ToDo_Staff, error)
+	Delete(id string) error
 }

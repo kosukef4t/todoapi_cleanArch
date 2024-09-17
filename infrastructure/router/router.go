@@ -39,7 +39,11 @@ func NewRouter(engine *echo.Echo, service *services.Service, auth *auth_services
 	engine.DELETE("/staffs/:id", h.JWTMiddleware(staffHandler.DeleteStaff))
 
 	// todo_staffハンドラ
-	engine.POST("/todo_staffs", h.JWTMiddleware(todostaffHandler.Assigntodo))
+	engine.GET("/todo_staff", h.JWTMiddleware(todostaffHandler.GetAssign))
+	engine.GET("/todo_staff/:id", h.JWTMiddleware(todostaffHandler.GetAssignByID))
+	engine.POST("/todo_staff", h.JWTMiddleware(todostaffHandler.Assigntodo))
+	engine.PATCH("/todo_staff/:id", h.JWTMiddleware(todostaffHandler.UpdateAssign))
+	engine.DELETE("/todo_staff/:id", h.JWTMiddleware(todostaffHandler.DeleteAssign))
 
 	// 認証機能
 	engine.POST("/register", authHandler.Register)

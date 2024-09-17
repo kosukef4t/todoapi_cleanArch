@@ -75,6 +75,22 @@ func (s *Service) DeleteStaff(id string) error {
 }
 
 // 以下よりToDo_Stuffに関するビジネスロジック
+func (s *Service) GetAssign(todo_id, staff_id string) ([]*entity.ToDo_Staff, error) {
+	return s.RepoToDo_Staff.Get(todo_id, staff_id)
+}
+
+func (s *Service) GetAssignByID(id string) (*entity.ToDo_Staff, error) {
+	return s.RepoToDo_Staff.GetByID(id)
+}
+
 func (s *Service) Assigntodo(todo_staff *entity.ToDo_Staff) error {
 	return s.RepoToDo_Staff.Assign(todo_staff)
+}
+
+func (s *Service) UpdateAssign(id, todo_id, staff_id string) (*entity.ToDo_Staff, error) {
+	return s.RepoToDo_Staff.Update(id, todo_id, staff_id)
+}
+
+func (s *Service) DeleteAssign(id string) error {
+	return s.RepoToDo_Staff.Delete(id)
 }
